@@ -11,7 +11,6 @@ function ($, domReady, dat, params, position, ctx, viewport, setPixels, noises, 
 	gui.add(params, 'paused');
 	gui.add(params, 'moveSpeed', 1, 10);
 
-	console.log(noises.files);
 	require(noises.files, function () {
 		getNoise.init(arguments);
 		run();

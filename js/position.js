@@ -1,6 +1,16 @@
-define (['jquery'], function ($) {
-	var pX = 0;
-	var pY = 0;
+define (['jquery', 'Parameters'], function ($, params) {
+
+	var Position = function () {
+		this.x = 0;
+		this.y = 0;
+		this.update = function () {
+			if (left) this.x -= params.moveSpeed;
+			if (right) this.x += params.moveSpeed;
+			if (up) this.y -= params.moveSpeed;
+			if (down) this.y += params.moveSpeed;
+		};
+	};
+
 	var up = 0,
 			left = 0,
 			right = 0,
@@ -39,14 +49,5 @@ define (['jquery'], function ($) {
 		}
 	});
 
-	return {
-		update : function () {
-			if (left) pX -= params.moveSpeed;
-			if (right) pX += params.moveSpeed;
-			if (up) pY -= params.moveSpeed;
-			if (down) pY += params.moveSpeed;
-		},
-		x : pX,
-		y : pY
-	};
+	return new Position();
 });
