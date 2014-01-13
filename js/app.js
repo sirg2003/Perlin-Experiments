@@ -1,8 +1,10 @@
 requirejs.config ({
 	baseUrl: 'js',
 	paths : {
-		'jquery' : '../bower_components/jquery/jquery.min',
-		'domReady' : '../bower_components/requirejs-domready/domReady'
+		'dat.gui' : '../libs/dat.gui',
+		'jquery' : '../libs/jquery',
+		'domReady' : '../libs/domReady',
+		'noise' : '../libs/noise'
 	},
 	shim : {
 		'jquery' : {
